@@ -167,8 +167,9 @@ module Ecoji
         if saw_padding
           if expected_version == 3 || expected_version == 2
             chars.unshift(c)
-            # NOTE(makenowjust): I think here we should be set `expected_version` to `2`,
-            # but the original implementation does not. For compatibility, `expected_version` is kept.
+            # NOTE(makenowjust): I think here we should set `expected_version` to `2`,
+            # but the original implementation does not.
+            # For the compatibility, `expected_version` is kept.
             return emojis, expected_version
           else
             raise Error.new("Unexpectedly saw non-padding after padding")
