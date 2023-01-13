@@ -1,0 +1,34 @@
+inherit_from: .rubocop_todo.yml
+
+require:
+  - rubocop-minitest
+  - rubocop-rake
+
+AllCops:
+  NewCops: enable
+  Exclude:
+    - '.git/**/*'
+    - 'bin/*'
+    - 'dep/**/*'
+    - 'lib/ecoji/emojis.rb'
+  TargetRubyVersion: 3.2
+
+Layout/LineLength:
+  Exclude:
+    - 'test/**/*_test.rb'
+
+Metrics/AbcSize:
+  Exclude:
+    - 'test/**/*_test.rb'
+
+Metrics/CyclomaticComplexity:
+  Exclude:
+    - 'test/**/*_test.rb'
+
+Metrics/MethodLength:
+  Exclude:
+    - 'test/**/*_test.rb'
+
+Metrics/PerceivedComplexity:
+  Exclude:
+    - 'test/**/*_test.rb'
