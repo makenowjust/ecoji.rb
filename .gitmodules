@@ -1,0 +1,3 @@
+[submodule "deps/ecoji"]
+	path = deps/ecoji
+	url = https://github.com/keith-turner/ecoji
