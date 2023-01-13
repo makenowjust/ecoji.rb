@@ -60,7 +60,7 @@ module Ecoji
     result.pack('U*')
   end
 
-  def self.decode(data)
+  def self.decode(data, encoding: Encoding::UTF_8)
     expected_version = 3
     chars = data.chars
     result = []
@@ -94,7 +94,7 @@ module Ecoji
       result.concat(out)
     end
 
-    result.pack('C*').force_encoding(Encoding::UTF_8)
+    result.pack('C*').force_encoding(encoding)
   end
 
   private_class_method def self.encode_five(s, emojis, padding_last, trim)
