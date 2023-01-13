@@ -1,6 +1,6 @@
 # Ecoji.rb
 
-[Ecoji](https://ecoji.io) is data-to-emoji encoding scheme.
+[Ecoji](https://ecoji.io) is a data-to-emoji encoding scheme.
 This library provides the implementation of Ecoji in Ruby.
 
 ## Installation

@@ -1,3 +1,6 @@
+module Ecoji
+end
+
 require 'ecoji/emojis'
 require "ecoji/version"
 
@@ -149,7 +152,7 @@ module Ecoji
       end
       
       c = chars.shift
-      next if c == '\n' || c == '\r'
+      next if c == "\n" || c == "\r"
 
       einfo = REV_EMOJIS[c.ord]
       raise Error.new("Non Ecoji character seen: #{c.inspect}") unless einfo

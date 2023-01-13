@@ -9,8 +9,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ["TSUYUSATO Kitsune"]
   spec.email         = ["make.just.on@gmail.com"]
 
-  spec.summary       = %q{Encodes (and decodes) data as emojis}
-  spec.description   = %q{Ecoji encodes (and decodes) data as emojis. This library implements V1 and V2.}
+  spec.summary       = %q{Ecoji implementation in Ruby}
+  spec.description   = %q{Ecoji is a data-to-emoji encoding scheme. This library provides the implementation of Ecoji in Ruby.}
   spec.homepage      = "https://github.com/makenowjust/ecoji.rb/"
   spec.license       = "MIT"
 
