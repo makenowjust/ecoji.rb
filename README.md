@@ -3,6 +3,8 @@
 [Ecoji](https://ecoji.io) is a data-to-emoji encoding scheme.
 This library provides the implementation of Ecoji in Ruby.
 
+[![RubyGems version badge](https://img.shields.io/gem/v/ecoji?style=for-the-badge)](https://rubygems.org/gems/ecoji)
+
 ## Installation
 
 Add this line to your application's Gemfile:
