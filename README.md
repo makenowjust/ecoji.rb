@@ -29,9 +29,9 @@ $ gem install ecoji
 require 'ecoji'
 
 Ecoji.encode("Base64 is so 1999, isn't there something better?")
-# => '🧏📩🧈🐇🧅📘🔯🚜💞😽♏🐊🎱🥁🚄🌱💞😭💮✊💢🪠🐭🩴🍉🚲🦑🐶💢🪠🔮🩹🍉📸🐮🌼👦🚟🥴📑'
+# => "🧏📩🧈🐇🧅📘🔯🚜💞😽♏🐊🎱🥁🚄🌱💞😭💮✊💢🪠🐭🩴🍉🚲🦑🐶💢🪠🔮🩹🍉📸🐮🌼👦🚟🥰☕"
 
-Ecoji.decode('🧏📩🧈🐇🧅📘🔯🚜💞😽♏🐊🎱🥁🚄🌱💞😭💮✊💢🪠🐭🩴🍉🚲🦑🐶💢🪠🔮🩹🍉📸🐮🌼👦🚟🥴📑')
+Ecoji.decode("🧏📩🧈🐇🧅📘🔯🚜💞😽♏🐊🎱🥁🚄🌱💞😭💮✊💢🪠🐭🩴🍉🚲🦑🐶💢🪠🔮🩹🍉📸🐮🌼👦🚟🥰☕")
 # => "Base64 is so 1999, isn't there something better?"
 ```
 
@@ -49,6 +49,10 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/MakeNo
 
 The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
 
+Note that this source code is derived from [the original implementation](https://github.com/keith-turner/ecoji).
+Thus, we copied the LICENSE of Ecoji to `LICENSE.ecoji`.
+Thanks for the great implementation!
+
 ## Code of Conduct
 
-Everyone interacting in the Ecoji project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/MakeNowJust/ecoji/blob/master/CODE_OF_CONDUCT.md).
+Everyone interacting in the Ecoji project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/makenowjust/ecoji.rb/blob/master/CODE_OF_CONDUCT.md).
