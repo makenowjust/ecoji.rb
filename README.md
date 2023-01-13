@@ -1,8 +1,7 @@
-# Ecoji
+# Ecoji.rb
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/ecoji`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+[Ecoji](https://ecoji.io) is data-to-emoji encoding scheme.
+This library provides the implementation of Ecoji in Ruby.
 
 ## Installation
 
@@ -14,15 +13,27 @@ gem 'ecoji'
 
 And then execute:
 
-    $ bundle
+```console
+$ bundle
+```
 
 Or install it yourself as:
 
-    $ gem install ecoji
+```console
+$ gem install ecoji
+```
 
 ## Usage
 
-TODO: Write usage instructions here
+```ruby
+require 'ecoji'
+
+Ecoji.encode("Base64 is so 1999, isn't there something better?")
+# => '🧏📩🧈🐇🧅📘🔯🚜💞😽♏🐊🎱🥁🚄🌱💞😭💮✊💢🪠🐭🩴🍉🚲🦑🐶💢🪠🔮🩹🍉📸🐮🌼👦🚟🥴📑'
+
+Ecoji.decode('🧏📩🧈🐇🧅📘🔯🚜💞😽♏🐊🎱🥁🚄🌱💞😭💮✊💢🪠🐭🩴🍉🚲🦑🐶💢🪠🔮🩹🍉📸🐮🌼👦🚟🥴📑')
+# => "Base64 is so 1999, isn't there something better?"
+```
 
 ## Development
 
