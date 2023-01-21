@@ -19,3 +19,7 @@ jobs:
         run: bundle install
       - name: Run tests
         run: bundle exec rake test
+      - name: Check generated code
+        run: |
+          bundle exec rake generate
+          git diff --exit-code
