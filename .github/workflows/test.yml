@@ -17,6 +17,10 @@ jobs:
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.2'
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: 'yarn'
       - name: Install dependencies
         run: bundle install
       - name: Run tests
@@ -25,3 +29,5 @@ jobs:
         run: |
           bundle exec rake generate
           git diff --exit-code
+      - name: Check web app code format
+        run: yarn check-format
