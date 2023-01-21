@@ -29,6 +29,46 @@ file 'lib/ecoji/emojis.rb' => %w[dep/ecoji/emojisV1.txt dep/ecoji/emojisV2.txt] 
   File.write 'lib/ecoji/emojis.rb', source.join("\n")
 end
 
+file 'node_modules/ruby-head-wasm-wasi/dist/ruby+stdlib.wasm' do
+  sh 'yarn install'
+end
+
+file 'build/wasi-vfs' do
+  version = '0.2.0'
+  arch = case RUBY_PLATFORM
+         when /darwin/ then 'aarch64-apple-darwin'
+         when /linux/ then 'x86_64-unknown-linux'
+         else raise 'Unsupported'
+         end
+  mkdir 'build'
+  chdir 'build' do
+    sh "curl -Lo wasi-vfs.zip 'https://github.com/kateinoigakukun/wasi-vfs/releases/download/v#{version}/wasi-vfs-cli-#{arch}.zip'"
+    sh 'unzip wasi-vfs.zip'
+    sh 'chmod +x wasi-vfs'
+  end
+end
+
+file 'build/ruby+stdlib.packed.wasm' => %w[build/wasi-vfs node_modules/ruby-head-wasm-wasi/dist/ruby+stdlib.wasm] do
+  chdir 'build' do
+    sh './wasi-vfs pack ' \
+       '../node_modules/ruby-head-wasm-wasi/dist/ruby+stdlib.wasm ' \
+       '--mapdir /ecoji::../lib -o ruby+stdlib.packed.wasm'
+  end
+end
+
+desc 'Generate library files'
 task generate: %w[lib/ecoji/emojis.rb]
+
+desc 'Build a web demonstration app'
+task web: %(build/ruby+stdlib.packed.wasm) do
+  sh 'yarn build'
+end
+
+namespace :web do
+  desc 'Run development server for web demonstration app'
+  task dev: %(build/ruby+stdlib.packed.wasm) do
+    sh 'yarn dev'
+  end
+end
 
 task default: :test
