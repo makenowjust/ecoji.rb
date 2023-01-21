@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "build": "parcel build web/index.html",
+    "build": "parcel build --public-url /ecoji.rb/ web/index.html",
     "dev": "parcel serve web/index.html",
     "check-format": "prettier --check 'web/**/*.{css,html,ts}'",
     "format": "prettier --write 'web/**/*.{css,html,ts}'"
