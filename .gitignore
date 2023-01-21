@@ -1,8 +1,13 @@
+*.log
 /.bundle/
+/.parcel-cache/
 /.yardoc
 /_yardoc/
+/build/
 /coverage/
+/dist/
 /doc/
 /pkg/
 /spec/reports/
 /tmp/
+/node_modules/
