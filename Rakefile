@@ -37,7 +37,7 @@ file 'build/wasi-vfs' do
   version = '0.2.0'
   arch = case RUBY_PLATFORM
          when /darwin/ then 'aarch64-apple-darwin'
-         when /linux/ then 'x86_64-unknown-linux'
+         when /linux/ then 'x86_64-unknown-linux-gnu'
          else raise 'Unsupported'
          end
   mkdir 'build'
