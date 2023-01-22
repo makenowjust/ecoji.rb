@@ -3,10 +3,10 @@ import fs from "fs";
 import { bootstrap } from "./bootstrap";
 
 const main = async () => {
-  const app = document.querySelector("#app")!;
-  app.innerHTML = '<p class="loading">Loading Ruby (ruby.wasm)...</p>';
+  const loading = document.querySelector(".loading")!;
+  loading.innerHTML = "Loading Ruby (ruby.wasm).";
   const vm = await bootstrap();
-  app.innerHTML = '<p class="loading">Evaluating Ruby code...</p>';
+  loading.innerHTML = "Evaluating Ruby code.";
   vm.eval(fs.readFileSync(__dirname + "/main.rb", "utf8"));
 };
 
